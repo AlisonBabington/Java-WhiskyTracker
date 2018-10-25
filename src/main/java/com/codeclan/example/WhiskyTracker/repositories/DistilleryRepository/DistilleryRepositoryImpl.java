@@ -17,29 +17,7 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
     @Autowired
     EntityManager entityManager;
 
-//    @Transactional
-//    public List<Pirate> getAllPiratesForShip(Long shipID) {
-//
-//        List<Pirate> results = null;
-//
-//        Session session = entityManager.unwrap(Session.class);
-//        try {
-//            Criteria criteria = session.createCriteria(Pirate.class);
-//            //similar to SELECT from pirates
-//
-//            criteria.add(Restrictions.eq("ship.id", shipID));
-//            //similar to WHERE ship = ship
-//
-//            results = criteria.list();
-//            //putting criteria enquiry results into a list to return
-//            //cr.uniqueResult(returns one result)
-//
-//        } catch (HibernateException ex) {
-//            ex.printStackTrace();
-//        } finally {
-//            session.close();
-//        }
-//        return results;
+
 
     //TODO:   get all the whisky from a particular region
     @Transactional
@@ -61,5 +39,24 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
         return results;
     }
 
+    //TODO:    get all the distilleries for a particular region
+    @Transactional
+    public List<Distillery> getAllDistileriesFromRegion(String region) {
+        List<Distillery> results = null;
+        Session session = entityManager.unwrap(Session.class);
 
+        try {
+            Criteria cr = session.createCriteria(Distillery.class);
+            cr.add(Restrictions.eq("region", region));
+            System.out.println(cr.list());
+            results = cr.list();
+        } catch (HibernateException ex) {
+            ex.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return results;
+
+
+    }
 }

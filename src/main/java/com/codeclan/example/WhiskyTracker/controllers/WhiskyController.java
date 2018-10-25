@@ -22,6 +22,13 @@ public class WhiskyController {
         return whiskyRepository.getAllWhiskiesFromYear(year);
     }
 
+    @GetMapping(value = "/{distillery}/{age}")
+    public List<Whisky> getWhiskyFromDistilleryOlderThan(@PathVariable Long distilleryId, int age) {
+        return whiskyRepository.getAllWhiskiesFromDistilleryOverAge(distilleryId, age);
+    }
+
+
+
 
 
 

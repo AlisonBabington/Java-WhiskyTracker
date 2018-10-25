@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface DistilleryRepository extends JpaRepository<Distillery, Long>, DistilleryRepositoryCustom {
     List<Whisky> getAllWhiskiesFromRegion(String region);
+    List<Distillery> getAllDistileriesFromRegion(String region);
 }
