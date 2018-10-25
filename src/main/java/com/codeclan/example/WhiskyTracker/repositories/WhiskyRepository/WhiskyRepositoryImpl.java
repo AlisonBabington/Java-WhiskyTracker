@@ -1,6 +1,7 @@
 package com.codeclan.example.WhiskyTracker.repositories.WhiskyRepository;
 
 
+import com.codeclan.example.WhiskyTracker.models.Distillery;
 import com.codeclan.example.WhiskyTracker.models.Whisky;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -13,12 +14,12 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
-    //TODO: get all the whiskies for a particular year
+
     @Autowired
     EntityManager entityManager;
 
     @Transactional
-    public List<Whisky> getAllWhiskiesFrom(int year) {
+    public List<Whisky> getAllWhiskiesFromYear(int year) {
         List<Whisky> results =null;
         Session session = entityManager.unwrap(Session.class);
 
@@ -33,5 +34,9 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
         }
         return results;
     }
+
+
+
+
 
 }

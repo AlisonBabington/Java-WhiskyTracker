@@ -19,8 +19,10 @@ public class WhiskyController {
 
     @GetMapping(value = "/{year}")
     public List<Whisky> getWhiskyOver(@PathVariable int year) {
-        return whiskyRepository.getAllWhiskiesFrom(year);
+        return whiskyRepository.getAllWhiskiesFromYear(year);
     }
+
+
 
 
 }
