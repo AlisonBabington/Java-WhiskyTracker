@@ -65,7 +65,6 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
             Criteria cr = session.createCriteria(Whisky.class);
             cr.createAlias("distillery", "d");
             cr.add(Restrictions.eq("d.region", region));
-            System.out.println(cr.list());
             results = cr.list();
         } catch (HibernateException ex) {
             ex.printStackTrace();
