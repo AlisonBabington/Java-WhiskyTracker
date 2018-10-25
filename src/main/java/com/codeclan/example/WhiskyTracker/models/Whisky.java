@@ -73,20 +73,3 @@ public class Whisky {
         this.age = age;
     }
 }
-//
-//    Given the basic code for classes and JpaRepositories for a whisky tracker, your task for this lab +
-//        homework is to complete the custom queries and connected them to appropriate RESTful endpoints.
-//
-//
-//        MVP
-//        Custom Queries + REST Write each of the following queries and connect them to an appropriate controller:
-//        get all the whiskies for a particular year
-//        get all the whisky from a particular region
-//        get all the distilleries for a particular region
-//        get all the whisky from a particular distillery that's a specific age (if any)
-//        Get disilleries that have whiskies that are 12 years old
-//        Tips
-//        Use a ddl-auto setting of create-drop when doing development. This means every time the app starts, the schema is created,
-//        and when the app stops the schema is destroyed.
-//        Use packages for each repository type. For example, all Distillery repositories (Custom, Impl and actual) should go in the
-//        same package called DistilleryRepository
