@@ -34,7 +34,7 @@ public class WhiskyTrackerApplicationTests {
 
 	@Test
 	public void canGetWhiskiesFromRegion() {
-		List<Whisky> results = distilleryRepository.getAllWhiskiesFromRegion("Speyside");
+		List<Whisky> results = whiskyRepository.getAllWhiskiesFromRegion("Speyside");
 	}
 
 	@Test

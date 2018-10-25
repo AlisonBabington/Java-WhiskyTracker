@@ -44,10 +44,10 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
         try {
             Criteria criteria = session.createCriteria(Whisky.class);
             criteria.add(Restrictions.gt("age", age));
-            criteria.createAlias("distillery", "d");
-            criteria.add(Restrictions.eq("d.id", distilleryId));
+            criteria.add(Restrictions.eq("distillery.id", distilleryId));
             results = criteria.list();
         } catch (HibernateException ex) {
+
             ex.printStackTrace();
         } finally {
             session.close();

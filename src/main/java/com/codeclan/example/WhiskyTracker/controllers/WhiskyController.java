@@ -17,7 +17,7 @@ public class WhiskyController {
     @Autowired
     WhiskyRepository whiskyRepository;
 
-    @GetMapping(value = "/{year}")
+    @GetMapping(value = "/at/{year}")
     public List<Whisky> getWhiskyOver(@PathVariable int year) {
         return whiskyRepository.getAllWhiskiesFromYear(year);
     }
@@ -26,6 +26,9 @@ public class WhiskyController {
     public List<Whisky> getWhiskyFromDistilleryOlderThan(@PathVariable Long distilleryId, int age) {
         return whiskyRepository.getAllWhiskiesFromDistilleryOverAge(distilleryId, age);
     }
+
+    @GetMapping(value = "/from/{region}/whiskies")
+    public List<Whisky> getWhiskyFrom(@PathVariable String region) {return whiskyRepository.getAllWhiskiesFromRegion(region);}
 
 
 
